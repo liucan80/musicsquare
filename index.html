@@ -723,7 +723,7 @@
       );
       opacity:0.46;
       filter:blur(14px);
-      animation: lyricsGlow 16s linear infinite;
+      /* animation: lyricsGlow 16s linear infinite; */ /* 禁用炫酷动画以提升性能 */
     }
     @keyframes lyricsGlow { to { transform:rotate(360deg);} }
     .lyrics-container::after {
@@ -738,7 +738,7 @@
         rgba(161,233,255,0.0)
       );
       transform:translateX(-130%);
-      animation: lyricsSweep 7s linear infinite;
+      /* animation: lyricsSweep 7s linear infinite; */ /* 禁用炫酷动画以提升性能 */
       opacity:0.95;
     }
     @keyframes lyricsSweep {
@@ -2966,7 +2966,7 @@
       setupDOM();
       try{const lg=localStorage.getItem('pikachu-music-lang'); if(lg)state.language=lg;}catch(e){}
       try{const fav=localStorage.getItem('pikachu-music-favorites'); if(fav)state.favorites=JSON.parse(fav);}catch(e){state.favorites=[];}
-      setupParticles();
+      // setupParticles(); // 禁用粒子动画以提升性能
       setupRipple();
       setupEvents();
       setLanguage(state.language);
